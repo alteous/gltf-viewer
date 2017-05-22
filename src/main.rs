@@ -22,7 +22,7 @@ pub fn main() {
     load_file("src/data/Box.gltf");
     // load_file("src/data/minimal.gltf");
     // load_file("../gltf/glTF-Sample-Models/2.0/BoomBox/glTF/BoomBox.gltf");
-    return;
+    // return;
     
 
     ///////////////
@@ -55,8 +55,10 @@ pub fn main() {
 
     // TODO!: other shader variants
     let pso = factory.create_pipeline_simple(
-        include_bytes!("shader/cube_150.glslv"),
-        include_bytes!("shader/cube_150.glslf"),
+        // include_bytes!("shader/cube_150.glslv"),
+        include_bytes!("shader/cube_100_es.glslv"),
+        // include_bytes!("shader/cube_150.glslf"),
+        include_bytes!("shader/cube_100_es.glslf"),
         pipe::new()
     ).unwrap();
 
