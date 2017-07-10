@@ -86,7 +86,7 @@ pub fn main() {
 
         let shader = Shader::new("src/shaders/simple.vs", "src/shaders/simple.fs");
 
-        let gltf = match spawn(gltf::import::from_path(source)).wait_future() {
+        let gltf = match gltf::Import::from_path(source).sync() {
             Ok(gltf) => gltf,
             Err(err) => {
                 println!("Error: {:?}", err);

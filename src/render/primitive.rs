@@ -5,7 +5,7 @@ use std::ptr;
 
 use gl;
 use gltf;
-use gltf::mesh::{ Indices, TexCoords, Colors };
+use gltf::mesh::{Indices, TexCoords, Colors};
 
 use render::math::*;
 use shader::Shader;
