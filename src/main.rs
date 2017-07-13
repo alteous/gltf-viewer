@@ -11,7 +11,6 @@ extern crate gltf;
 extern crate image;
 
 extern crate futures;
-use futures::executor::spawn;
 
 use clap::{Arg, App};
 

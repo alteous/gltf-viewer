@@ -26,6 +26,5 @@ glfw = "0.15.0"
 image = "0.14.0"
 
 [dependencies.gltf]
-# branch = "incoming"
-# git = "https://github.com/alteous/gltf.git"
-path = "../gltf"
+branch = "incoming"
+git = "https://github.com/alteous/gltf.git"

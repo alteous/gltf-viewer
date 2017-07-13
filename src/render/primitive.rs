@@ -10,8 +10,6 @@ use gltf::mesh::{Indices, TexCoords, Colors};
 use render::math::*;
 use shader::Shader;
 
-use futures::Future;
-
 #[repr(C)]
 #[derive(Debug)]
 pub struct Vertex {
@@ -76,9 +74,9 @@ impl Primitive {
 
     pub fn from_gltf(g_primitive: gltf::mesh::Primitive) -> Primitive {
         // TODO!!: handle unwraps...
-        let positions = g_primitive.positions().unwrap().wait().unwrap();
+        let positions = g_primitive.positions().unwrap();
         // TODO!: turn all expects into error type
-        let normals = g_primitive.normals().unwrap().wait() // TODO: flat normal calculation (in gltf crate)
+        let normals = g_primitive.normals() // TODO: flat normal calculation (in gltf crate)
             .expect("NotImplementedYet: Normals required! Calculation of flat normals not implemented yet.");
         // let mut tangents = g_primitive.tangents().unwrap().wait();
 
@@ -119,7 +117,7 @@ impl Primitive {
         //     _ => None
         // };
 
-        let indices = g_primitive.indices().unwrap().wait()
+        let indices = g_primitive.indices()
             .expect("NotImplementedYet: Indices required at the moment!");
 
         let vertices: Vec<Vertex> = positions
